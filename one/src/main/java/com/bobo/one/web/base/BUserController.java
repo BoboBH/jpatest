@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.bobo.one.dao.UserReportRepository;
 import com.bobo.one.dao.UserRepository;
 import com.bobo.one.pojo.UBser;
 

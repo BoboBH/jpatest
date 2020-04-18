@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.bobo.one.domain.User;
 
 @Component
-@FeignClient(name = "testfeign", url = "http://localhost:8090")
+@FeignClient(name = "testfeign", url = "${service.feign.url}")
 public interface FeignService {
 
 	@RequestMapping(value = "users/{id}", method = RequestMethod.GET)

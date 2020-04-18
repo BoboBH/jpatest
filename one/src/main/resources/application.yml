@@ -1,6 +1,11 @@
 server:
   port: 8090
+service:
+  feign:
+    url : http://localhost:8090
 spring:
+  application:
+    name: bobo.one
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/test?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=true

@@ -39,6 +39,24 @@ public class UBser extends BasePojo{
 		this.lastloginon = lastloginon;
 	}
 
+	@Column(name="school_id")
+	private Long schoolId;
+	public Long getSchoolId() {
+		return schoolId;
+	}
+	public void setSchoolId(Long schoolId) {
+		this.schoolId = schoolId;
+	}
+	
+	@Column(name="age")
+	private Integer age;
+	
+	public Integer getAge() {
+		return age;
+	}
+	public void setAge(Integer age) {
+		this.age = age;
+	}
 	public UBser(){
 		super();
 	}
