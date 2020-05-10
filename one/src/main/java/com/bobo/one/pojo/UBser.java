@@ -5,15 +5,28 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+import com.bobo.one.reflect.CSVBaseConvert;
+import com.bobo.one.reflect.CSVField;
+
 
 @Entity
 @Table(name="t_user")
 public class UBser extends BasePojo{
 	
+	public UBser(String username, String password,Long schoolId, Integer age){
+		super();
+		this.username = username;
+		this.age = age;
+		this.password = password;
+		this.schoolId = schoolId;
+	}
+	
+	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 6726305801877898117L;
+	@CSVField(value="User Name",convert = CSVBaseConvert.class)
 	@Column(name="username")
 	private String username;
 	public String getUsername() {

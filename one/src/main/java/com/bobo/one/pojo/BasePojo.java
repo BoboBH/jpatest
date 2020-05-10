@@ -13,6 +13,9 @@ import javax.persistence.MappedSuperclass;
 
 import org.springframework.util.StringUtils;
 
+import com.bobo.one.reflect.CSVField;
+import com.bobo.one.reflect.TimeStampConvert;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -30,14 +33,47 @@ public class BasePojo implements Serializable{
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Id
 	@Column(name="id")
-	private Long id;
+	protected Long id;
 	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Long getCreatedon() {
+		return createdon;
+	}
+
+	public void setCreatedon(Long createdon) {
+		this.createdon = createdon;
+	}
+
+	public Long getLastupdatedon() {
+		return lastupdatedon;
+	}
+
+	public void setLastupdatedon(Long lastupdatedon) {
+		this.lastupdatedon = lastupdatedon;
+	}
+
+	public String getRemarks() {
+		return remarks;
+	}
+
+	public void setRemarks(String remarks) {
+		this.remarks = remarks;
+	}
+
+	@CSVField(value="Created On",convert = TimeStampConvert.class)
 	@Column(name="createdon")
-	private Long createdon;
+	protected Long createdon;
 	@Column(name="lastupdatedon")
-	private Long lastupdatedon;
+	protected Long lastupdatedon;
 	@Column(name="remarks",length=1000)
-	private String remarks;
+	protected String remarks;
 	
 	
 	public BasePojo(){
